@@ -5,4 +5,5 @@
     <color name="colorAccent">#447ad0</color>
     <color name="windowBackground">#eef0f3</color>
     <color name="navigationBarColor">#233141</color>
+    <color name="deSelect">#c6cbd1</color>
 </resources>
