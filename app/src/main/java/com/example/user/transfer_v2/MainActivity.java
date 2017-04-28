@@ -19,8 +19,6 @@ public class MainActivity extends AppCompatActivity {
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
-
-
         }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
