@@ -2,54 +2,72 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingLeft="16dp"
     android:paddingRight="16dp">
 
-    <android.support.design.widget.TextInputLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:theme="@style/TextLabel"
-        app:hintTextAppearance="@style/TextLabelHint">
+        tools:ignore="UselessParent">
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/inputText"
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/textInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableRight="@mipmap/ic_launcher"
-            android:drawablePadding="60dp"
-            android:hint="@string/etSend"
-            android:textColor="@color/colorPrimaryDark"
-            android:textColorHint="@color/deSelect"
-            android:textSize="32dp"
-            android:paddingBottom="22dp"
-            android:maxLines="1"
-            android:inputType="number"
-            android:maxLength="7"/>
+            android:theme="@style/TextLabel"
+            app:hintTextAppearance="@style/TextLabelHint">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/inputText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etSend"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/deSelect"
+                android:textSize="32sp"
+                android:paddingBottom="22dp"
+                android:maxLines="1"
+                android:inputType="number"
+                android:maxLength="7"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:theme="@style/TextLabel"
-        app:hintTextAppearance="@style/TextLabelHint">
+        </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/inputText2"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/etSend"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="32dp"
-            android:paddingBottom="22dp"
-            android:maxLines="1"
-            android:inputType="number"/>
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            tools:ignore="RelativeOverlap,RtlHardcoded">
 
-    </android.support.design.widget.TextInputLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="26dp"
+                android:layout_height="18dp"
+                android:scaleType="centerCrop"
+                android:layout_marginRight="12dp"
+                android:layout_gravity="center_vertical"
+                app:srcCompat="@drawable/flag_kor"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/krw"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
 
 </LinearLayout>
