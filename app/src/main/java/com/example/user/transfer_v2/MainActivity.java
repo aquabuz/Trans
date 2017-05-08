@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 11"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 22"));
+        tabLayout.addTab(tabLayout.newTab().setText("Send"));
+        tabLayout.addTab(tabLayout.newTab().setText("Receive"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);

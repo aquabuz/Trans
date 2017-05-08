@@ -34,26 +34,26 @@
                 android:paddingBottom="22dp"
                 android:maxLines="1"
                 android:inputType="number"
-                android:maxLength="7"/>
+                android:maxLength="10"/>
 
         </android.support.design.widget.TextInputLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="33dp"
             android:layout_marginRight="10dp"
             android:orientation="horizontal"
             tools:ignore="RelativeOverlap,RtlHardcoded">
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="26dp"
-                android:layout_height="18dp"
-                android:scaleType="centerCrop"
-                android:layout_marginRight="12dp"
-                android:layout_gravity="center_vertical"
+                android:layout_width="30dp"
+                android:layout_height="21dp"
+                android:scaleType="centerInside"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="11dp"
                 app:srcCompat="@drawable/flag_kor"
                 tools:ignore="ContentDescription" />
 
@@ -61,9 +61,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/krw"
-                android:layout_gravity="center_vertical"
                 android:textColor="@color/colorPrimaryDark"
-                android:textSize="16sp"/>
+                android:textSize="18sp"/>
 
         </LinearLayout>
 
