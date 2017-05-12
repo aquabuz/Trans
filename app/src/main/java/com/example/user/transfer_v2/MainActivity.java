@@ -15,7 +15,8 @@ public class MainActivity extends AppCompatActivity {
 
 //    TextView textView;
 //    EditText editText;
-//
+
+//    클래스 호출
 //    private TextWatcherClass    m_TextWatcherClass          = null;
 
     @Override
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+//        클래스 호출
 //        textView = (TextView)findViewById(R.id.compareText); // 결과를 보여줄 TextView
 //        editText = (EditText)findViewById(R.id.inputText); // 값을 입력할 EditText
 //
@@ -66,9 +69,5 @@ public class MainActivity extends AppCompatActivity {
 //        editText.addTextChangedListener(m_TextWatcherClass); // TextWatcher 리스너 등록
     }
 
-    @Override
-    public void onBackPressed() {
 
-        super.onBackPressed();
-    }
 }

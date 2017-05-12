@@ -7,5 +7,9 @@
     <string name="etSend">You send exactly</string>
     <string name="pro_nxt">Next</string>
     <string name="co_krw">KRW</string>
+    
+    <!-- 금액 입력 최소, 최대값 -->
+    <string name="min_value">1000</string>
+    <string name="max_value">1000000</string>
 
 </resources>
