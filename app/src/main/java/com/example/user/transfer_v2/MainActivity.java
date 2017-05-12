@@ -7,13 +7,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView textView;
-    EditText editText;
+//    TextView textView;
+//    EditText editText;
+//
+//    private TextWatcherClass    m_TextWatcherClass          = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,30 +58,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        textView = (TextView)findViewById(R.id.textView); // 결과를 보여줄 TextView
-        editText = (EditText)findViewById(R.id.inputText); // 값을 입력할 EditText
-
-        editText.addTextChangedListener(textWatcher); // TextWatcher 리스너 등록
-
+//        textView = (TextView)findViewById(R.id.compareText); // 결과를 보여줄 TextView
+//        editText = (EditText)findViewById(R.id.inputText); // 값을 입력할 EditText
+//
+//        m_TextWatcherClass = new TextWatcherClass();
+//
+//        editText.addTextChangedListener(m_TextWatcherClass); // TextWatcher 리스너 등록
     }
 
-    TextWatcher textWatcher = new TextWatcher() {
-        @Override
-        public void afterTextChanged(Editable edit) {
-            // Text가 바뀌고 동작할 코드
-        }
+    @Override
+    public void onBackPressed() {
 
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            // Text가 바뀌기 전 동작할 코드
-        }
-
-        //
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            // 입력받은 값에 100을 곱한다
-            int changeValue = Integer.parseInt(editText.getText().toString()) * 100;
-            textView.setText(changeValue+""); // 위에서 얻은 변경된값을 textView에 표시한다
-        }
-    };
+        super.onBackPressed();
+    }
 }
