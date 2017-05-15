@@ -52,7 +52,7 @@
                 android:scaleType="centerInside"
                 android:layout_marginTop="3dp"
                 android:layout_marginRight="11dp"
-                app:srcCompat="@drawable/flag_kor"
+                app:srcCompat="@drawable/fl_krw"
                 tools:ignore="ContentDescription" />
 
             <TextView

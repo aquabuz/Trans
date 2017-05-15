@@ -1,5 +1,6 @@
 package com.example.user.transfer_v2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,8 +24,9 @@ public class TabFragment1 extends Fragment {
     EditText editText;
     Button button;
 
-    private TextWatcher m_textWatcher = null;
+    Intent intent;
 
+    private TextWatcher m_textWatcher = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -33,6 +35,14 @@ public class TabFragment1 extends Fragment {
 
         editText = (EditText) view.findViewById(R.id.inputText); // 값을 입력할 EditText
         button = (Button) view.findViewById(R.id.compare); // 활성 비활성 버튼
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getActivity(), ListCountry.class);
+                startActivity(intent);
+            }
+        });
 
         m_textWatcher = new TextWatcher() {
 
@@ -63,7 +73,6 @@ public class TabFragment1 extends Fragment {
                     button.setEnabled(false);
                 }
 
-                Log.e("=debug=", "x=" + x);
             }
 
             @Override
