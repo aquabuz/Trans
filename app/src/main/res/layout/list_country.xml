@@ -18,10 +18,9 @@
     </android.support.v7.widget.Toolbar>
 
     <ListView
-        android:id="@+id/listview"
+        android:id="@+id/view_country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="58dp"
         android:dividerHeight="1dp"
         android:divider="#f4f4f4">
     </ListView>

@@ -2,40 +2,40 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="76dp"
-    android:background="#FFFFFF">
+    android:layout_height="60dp"
+    android:background="@android:color/white">
 
     <ImageView
         android:id="@+id/thumb"
-        android:layout_width="36dp"
-        android:layout_height="36dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="24dp"
+        android:layout_width="24dp"
+        android:layout_height="16dp"
+        android:layout_marginLeft="20dp"
         android:src="@drawable/fl_krw"
         android:layout_centerVertical="true"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="8dp"
-        android:orientation="vertical"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true"
         android:layout_toRightOf="@+id/thumb">
 
         <TextView
             android:id="@+id/Currency"
-            android:layout_width="wrap_content"
+            android:layout_width="47dp"
             android:layout_height="wrap_content"
-            android:text="KDE"
-            android:textSize="25dp"
-            android:textColor="#333333"/>
+            android:layout_marginLeft="16dp"
+            android:text="@string/cu_krw"
+            android:textSize="15sp"
+            android:textColor="@color/colorPrimaryDark"/>
 
         <TextView
             android:id="@+id/Country"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1981.02.08"
-            android:textSize="14dp"
-            android:textColor="#aaaaaa"/>
+            android:text="@string/cn_kor"
+            android:textSize="12sp"
+            android:textColor="@color/colorGray"/>
 
     </LinearLayout>
 

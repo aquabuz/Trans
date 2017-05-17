@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,10 +24,12 @@ public class TabFragment1 extends Fragment {
 
     EditText editText;
     Button button;
+    TextView m_Currency = null;
+    ImageView m_Country = null;
 
     Intent intent;
 
-    private TextWatcher m_textWatcher = null;
+    private TextWatcher m_textWatcher   = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,11 +38,13 @@ public class TabFragment1 extends Fragment {
 
         editText = (EditText) view.findViewById(R.id.inputText); // 값을 입력할 EditText
         button = (Button) view.findViewById(R.id.compare); // 활성 비활성 버튼
+        m_Currency = (TextView) view.findViewById(R.id.Currency);
+        m_Country = (ImageView) view.findViewById(R.id.Country);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                intent = new Intent(getActivity(), ListCountry.class);
+                intent = new Intent(getActivity(), ListCompare.class);
                 startActivity(intent);
             }
         });
@@ -91,5 +96,13 @@ public class TabFragment1 extends Fragment {
 //    private void onSetTextWatcher(String text) {
 //        Log.e("aaa", "text=" + text);
 //    }
+
+    public void setCurrency(String currency) {
+        m_Currency.setText(currency);//통화 변경
+    }
+
+    public void setCountry(int country) {
+        m_Country.setImageResource(ListCountryImages.ImageId[country]);//국자 이미지
+    }
 
 }

@@ -1,12 +1,20 @@
 <resources>
-    <string name="app_name">Transfer</string>
+    <string name="app_name">GmoneyTrans</string>
+    <string name="act_country">Currency &amp; Country</string>
+    <string name="act_compare">Compare</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     
     <string name="etSend">You send exactly</string>
+
     <string name="pro_nxt">Next</string>
-    <string name="co_krw">KRW</string>
+
+    <!-- 통화 -->
+    <string name="cu_krw">KRW</string>
+
+    <!-- 국가 -->
+    <string name="cn_kor">South Korea</string>
     
     <!-- 금액 입력 최소, 최대값 -->
     <string name="min_value">1000</string>
