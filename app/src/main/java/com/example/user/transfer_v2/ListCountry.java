@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 
 /**
@@ -16,10 +18,34 @@ import android.widget.ListView;
 
 public class ListCountry extends AppCompatActivity {
 
+    private ListView lstSearch;
+    private EditText edtSearch;
+    private ArrayAdapter<String> adapter;
+
+    String data[] = {
+        "South Korea",
+        "United States dollar",
+        "British pound",
+        "Indian rupee",
+        "Australian dollar",
+        "Chinese yuan",
+        "South Korea",
+        "United States dollar",
+        "British pound",
+        "Indian rupee",
+        "Australian dollar",
+        "Chinese yuan"
+    };
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_country);
+
+        lstSearch   = (ListView) findViewById(R.id.view_country);
+        edtSearch   = (EditText) findViewById(R.id.edtSearch);
+        adapter     = new ArrayAdapter<String>(this, R.layout.listview_row, R.id.Country, data);
+        lstSearch.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

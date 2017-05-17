@@ -12,6 +12,12 @@ public class ListCountryName {
             "British pound",
             "Indian rupee",
             "Australian dollar",
+            "Chinese yuan",
+            "South Korea",
+            "United States dollar",
+            "British pound",
+            "Indian rupee",
+            "Australian dollar",
             "Chinese yuan"
     };
 

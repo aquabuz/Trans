@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+        //tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);//키패드 활성
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         FragmentPagerrAdpater adapter = new FragmentPagerrAdpater(getSupportFragmentManager());

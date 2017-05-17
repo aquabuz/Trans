@@ -12,6 +12,12 @@ public class ListCountryCurrency {
             "GBP",
             "INR",
             "AUD",
+            "CNY",
+            "KRW",
+            "USD",
+            "GBP",
+            "INR",
+            "AUD",
             "CNY"
     };
 

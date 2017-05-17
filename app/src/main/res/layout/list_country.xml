@@ -17,6 +17,13 @@
         app:titleTextAppearance="@style/AppTheme.Toolbar.Title">
     </android.support.v7.widget.Toolbar>
 
+    <EditText
+        android:id="@+id/edtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:hint="Search...."
+        android:background="@color/colorPrimary"/>
+
     <ListView
         android:id="@+id/view_country"
         android:layout_width="match_parent"
@@ -24,5 +31,21 @@
         android:dividerHeight="1dp"
         android:divider="#f4f4f4">
     </ListView>
+
+    <!--<android.support.v7.widget.SearchView-->
+        <!--android:id="@+id/searchBar"-->
+        <!--android:clickable="true"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/colorPrimaryDark">-->
+    <!--</android.support.v7.widget.SearchView>-->
+
+    <!--<ListView-->
+        <!--android:id="@+id/view_country"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:dividerHeight="1dp"-->
+        <!--android:divider="#f4f4f4">-->
+    <!--</ListView>-->
 
 </LinearLayout>
