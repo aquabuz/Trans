@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,24 +20,9 @@ import android.widget.ListView;
 
 public class ListCountry extends AppCompatActivity {
 
-    private ListView lstSearch;
+    ListView lstSearch = null;
     private EditText edtSearch;
     private ArrayAdapter<String> adapter;
-
-    String data[] = {
-        "South Korea",
-        "United States dollar",
-        "British pound",
-        "Indian rupee",
-        "Australian dollar",
-        "Chinese yuan",
-        "South Korea",
-        "United States dollar",
-        "British pound",
-        "Indian rupee",
-        "Australian dollar",
-        "Chinese yuan"
-    };
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -44,7 +31,8 @@ public class ListCountry extends AppCompatActivity {
 
         lstSearch   = (ListView) findViewById(R.id.view_country);
         edtSearch   = (EditText) findViewById(R.id.edtSearch);
-        adapter     = new ArrayAdapter<String>(this, R.layout.listview_row, R.id.Country, data);
+
+        adapter = new ArrayAdapter<String>(this, R.layout.listview_row, R.id.Country, ListCountryName.NameId);
         lstSearch.setAdapter(adapter);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -53,7 +41,7 @@ public class ListCountry extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.view_country);
 
-        ListCountryAdapter adapter = new ListCountryAdapter(this, ListCountryCurrency.CurrencyId, ListCountryName.NameId, ListCountryImages.ImageId);
+        final ListCountryAdapter adapter = new ListCountryAdapter(this, ListCountryCurrency.CurrencyId, ListCountryName.NameId, ListCountryImages.ImageId);
         listView.setAdapter(adapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -65,6 +53,23 @@ public class ListCountry extends AppCompatActivity {
                 intent.putExtra("Position", position);
 
                 startActivity(intent);
+            }
+        });
+
+        edtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                String searchText = s.toString();
+                Log.e("=d=", searchText);
             }
         });
 
