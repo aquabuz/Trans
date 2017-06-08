@@ -21,10 +21,12 @@
         android:id="@+id/edtSearch"
         android:layout_width="match_parent"
         android:layout_height="42dp"
+        android:inputType="text"
         android:maxLines="1"
-        android:maxLength="8"
+        android:maxLength="20"
         android:hint="@string/etSelect"
         android:paddingLeft="16dp"
+        android:textSize="14sp"
         android:textColorHint="@color/deSelect"
         android:textColor="@color/colorPrimaryDark"
         android:background="@color/colorPrimary"/>
