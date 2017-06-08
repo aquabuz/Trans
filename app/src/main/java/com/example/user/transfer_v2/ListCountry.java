@@ -10,9 +10,10 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+
+import java.util.ArrayList;
 
 /**
  * Created by User on 2017-05-10.
@@ -22,27 +23,36 @@ public class ListCountry extends AppCompatActivity {
 
     ListView lstSearch = null;
     private EditText edtSearch;
-    private ArrayAdapter<String> adapter;
+    private ListCountryAdapter adapterSearch;
+
+    private ArrayList<CountryModels>    m_ModelsArray = null;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.list_country);
 
-        lstSearch   = (ListView) findViewById(R.id.view_country);
-        edtSearch   = (EditText) findViewById(R.id.edtSearch);
-
-        adapter = new ArrayAdapter<String>(this, R.layout.listview_row, R.id.Country, ListCountryName.NameId);
-        lstSearch.setAdapter(adapter);
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.act_country); // Title 변경
 
-        ListView listView = (ListView) findViewById(R.id.view_country);
 
-        final ListCountryAdapter adapter = new ListCountryAdapter(this, ListCountryCurrency.CurrencyId, ListCountryName.NameId, ListCountryImages.ImageId);
-        listView.setAdapter(adapter);
+        m_ModelsArray = new ArrayList<CountryModels>(); // 초기 리스트
+
+        for(int index = 0; index <ListCountryName.NameId.length; index++ ) {
+
+            CountryModels models = new CountryModels();
+
+            models.setCountryName(ListCountryName.NameId[index]);
+            models.setCountryCurremcy(ListCountryCurrency.CurrencyId[index]);
+            models.setImageId(ListCountryImages.ImageId[index]);
+
+            m_ModelsArray.add(models);
+        }
+
+
+        ListView listView = (ListView) findViewById(R.id.view_country);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -56,21 +66,32 @@ public class ListCountry extends AppCompatActivity {
             }
         });
 
+        lstSearch   = (ListView) findViewById(R.id.view_country);
+        edtSearch   = (EditText) findViewById(R.id.edtSearch);
+
+        adapterSearch = new ListCountryAdapter(this, R.layout.listview_row);
+        adapterSearch.setData(m_ModelsArray);
+        lstSearch.setAdapter(adapterSearch);
+
         edtSearch.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                adapterSearch.getFilter().filter(s);
+
+                if(s.length() == 0) { // 입력값 초기화
+                    Log.e("debug","Reset");
+                    adapterSearch.setData(m_ModelsArray);
+                    adapterSearch.notifyDataSetChanged();
+                }
+
             }
 
             @Override
-            public void afterTextChanged(Editable s) {
-                String searchText = s.toString();
-                Log.e("=d=", searchText);
-            }
+            public void afterTextChanged(Editable s) {}
         });
 
     }
